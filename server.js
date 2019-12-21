@@ -27,12 +27,6 @@ app.get('/films', handleGetFilms)
 
 function handleGetFilms(req, res){
 
-    let convertedNumber = (Number(req.query.avgvote))
-
-    if(Number.isNaN(convertedNumber) || Number(req.query.avgvote) > 10 || Number(req.query.avgvote < 0)){
-        res.send(400, 'Invalid average vote input.')
-    }
-
     let results = moviesdata;
 
     if(req.query.genre){
